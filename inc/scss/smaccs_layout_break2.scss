@@ -1,0 +1,10 @@
+section p {
+	text-align: left;
+}
+
+header {
+	nav {
+		select { display: none; }
+		ul { @include inline-block; }
+	}
+}
