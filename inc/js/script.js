@@ -1,30 +1,32 @@
-jQuery(document).ready(function($) {
+var select = document.createElement("select");
+var nav = document.getElementsByTagName("nav");
 
-	// Create the dropdown base
-	$("<select />").appendTo("nav");
+nav[0].appendChild(select);
 
-	// Create default option "Go to..."
-	$("<option />", {
-		"selected": "selected",
-		"value"   : "",
-		"text"    : "Navigation"
-	}).appendTo("nav select");
+// Create default option "Go to..."
+var emptyOption = document.createElement("option");
+emptyOption.selected = "selected";
+emptyOption.value = "";
+emptyOption.text = "Navigation";
 
-	// Populate dropdown with menu items
-	$("nav a").each(function() {
-		var el = $(this);
-		$("<option />", {
-			"value"   : el.attr("href"),
-			"text"    : el.text()
-		}).appendTo("nav select");
-	});
+select.appendChild(emptyOption);
 
-	// jump to nav item
-	$("nav select").change(function() {
-		navitem = $(this).find("option:selected").val();
-		if (navitem != '') {
-			document.location = navitem;
-		}
-	});
+// Populate dropdown with menu items
+var navItems = [].slice.call(nav[0].getElementsByTagName("a"));
 
-}); //
+navItems.forEach(function(item) {
+  var option = document.createElement("option");
+  option.value = item.href;
+  option.text = item.innerText;
+
+  select.appendChild(option);
+});
+
+function navigate(item) {
+  var location = [].slice.call(select)[item.target.selectedIndex].value;
+  if (location != "") {
+    document.location = location;
+    select.options[0].selected = true;
+  }
+}
+select.onchange = navigate;
