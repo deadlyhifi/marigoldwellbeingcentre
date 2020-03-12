@@ -1,116 +1,3 @@
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-@font-face {
-  font-family: "Quicksand";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Quicksand Regular"), local("Quicksand-Regular"),
-    url(http://themes.googleusercontent.com/static/fonts/quicksand/v2/sKd0EMYPAh5PYCRKSryvW7O3LdcAZYWl9Si6vvxL-qU.woff)
-      format("woff");
-}
-html,
-body,
-body div,
-span,
-object,
-iframe,
-h1,
-h2,
-h3,
-p,
-blockquote,
-pre,
-abbr,
-address,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-samp,
-small,
-strong,
-sub,
-sup,
-var,
-b,
-i,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  background: transparent;
-  vertical-align: baseline;
-  font-size: 100%;
-}
-article,
-aside,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section {
-  display: block;
-}
-@-webkit-viewport {
-  width: device-width;
-}
-@-moz-viewport {
-  width: device-width;
-}
-@-ms-viewport {
-  width: device-width;
-}
-@-o-viewport {
-  width: device-width;
-}
-@viewport {
-  width: device-width;
-}
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 html {
   background: #fed578;
   font-size: 62.5%;
@@ -125,18 +12,14 @@ body {
   padding: 0;
   width: 100%;
   background-color: transparent;
-  color: #000;
+  color: #383838;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
 }
 a {
-  -webkit-transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out;
-  -moz-transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out;
-  -o-transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out;
   transition: color 0.2s ease-in-out, background-color 0.4s ease-in-out;
-  color: #000;
-  background-color: rgba(255, 255, 255, 0.5);
+  color: #383838;
+  background-color: rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   padding: 2px 4px;
   margin: 0 -2px;
@@ -606,9 +489,17 @@ header h2 {
   color: #fff;
   text-shadow: 0 -1px 8px gray;
   margin: 0.75em 0;
-  font-size: 35px;
-  font-size: 3.5rem;
+  font-size: 30px;
+  font-size: 3rem;
 }
+
+@media (min-width: 700px) {
+  header h2 {
+    font-size: 35px;
+    font-size: 3.5rem;
+  }
+}
+
 header nav select {
   width: 100%;
   display: block;
@@ -635,8 +526,8 @@ header nav ul li {
 }
 header nav ul li a {
   background-color: #fdb513;
-  padding: 0.75em 1.5em;
-  margin: 0.75em;
+  padding: 0.5em;
+  margin: 0.5em;
   text-decoration: none;
   border-radius: 4px;
   color: #404040;
@@ -666,6 +557,11 @@ section#images ul {
 footer[role="contentinfo"] {
   text-align: center;
 }
+
+footer[role="contentinfo"] p {
+  font-size: 80%;
+}
+
 @media only screen and (min-width: 768px) {
   section p {
     text-align: left;
