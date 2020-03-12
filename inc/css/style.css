@@ -250,7 +250,12 @@ strong {
   border-radius: 2px;
   background-color: #fcf8e3;
   color: #9c8611;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+.alert.priority1 p {
+  font-size: 20px;
+}
+.alert p {
   text-align: center;
 }
 
