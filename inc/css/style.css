@@ -268,9 +268,7 @@ header h2 {
   }
 }
 
-section#about-us,
-section#directions,
-section#volunteers-and-donations {
+section:nth-of-type(odd) {
   background-color: #fdb513;
 }
 
